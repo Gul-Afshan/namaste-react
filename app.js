@@ -72,16 +72,41 @@ import ReactDOM  from "react-dom/client";
 </div>
  */
 
-const parent = React.createElement("div",{id:"parent"},
-[
-    React.createElement("div",{id:"child-1"},
-     [React.createElement("h1",{}, "I am Gulafshan") , React.createElement("h2",{}, "I am Saksham")]
-   ),
-   React.createElement("div",{id:"child-2"},
-     [React.createElement("h1",{}, "I am Gulafshan") , React.createElement("h2",{}, "I am Saksham")]
-   )
-]);
+// const parent = React.createElement("div",{id:"parent"},
+// [
+//     React.createElement("div",{id:"child-1"},
+//      [React.createElement("h1",{}, "I am Gulafshan") , React.createElement("h2",{}, "I am Saksham")]
+//    ),
+//    React.createElement("div",{id:"child-2"},
+//      [React.createElement("h1",{}, "I am Gulafshan") , React.createElement("h2",{}, "I am Saksham")]
+//    )
+// ]);
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// console.log("root",root);
+// root.render(parent);
+
+/* jsx is nothing but a html code */
+// const jsxHeading = <h1 className="heading" id="heading" >This is jsx</h1>
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(jsxHeading);
+
+
+
+/* function component */
+
+let Title = ()=>{
+   return <h1 id="title" >Hii I am Gulafshan</h1>
+}
+
+
+let HeadingComponent = ()=>{
+   return <h1 id="heading">
+      <Title></Title>        
+      <Title/>
+      {Title()}
+      Hii I am Saksham</h1>
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log("root",root);
-root.render(parent);
+root.render(< HeadingComponent />);
