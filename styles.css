@@ -46,3 +46,7 @@
   border: 3px solid brown;
   cursor: pointer;
 }
+
+.filter-btn {
+  margin: 10px;
+}
